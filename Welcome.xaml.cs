@@ -42,11 +42,13 @@ namespace Delivery_Cabinet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Page pick_up = new Pick_up
-            {
-                parentWindow = this.parentWindow
-            };
-            this.parentWindow.container.Navigate(pick_up);
+            
+            this.parentWindow.container.Navigate(this.parentWindow.pick_up);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.parentWindow.container.Navigate(this.parentWindow.deposit);
         }
     }
 }

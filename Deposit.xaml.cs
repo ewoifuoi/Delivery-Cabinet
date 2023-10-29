@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace Delivery_Cabinet
 {
     /// <summary>
-    /// Select_Cabinet.xaml 的交互逻辑
+    /// Deposit.xaml 的交互逻辑
     /// </summary>
-    public partial class Select_Cabinet : Page
+    public partial class Deposit : Page
     {
 
         public MainWindow parentWindow;
@@ -33,7 +33,7 @@ namespace Delivery_Cabinet
                 parentWindow = value;
             }
         }
-        public Select_Cabinet()
+        public Deposit()
         {
             InitializeComponent();
         }

@@ -11,7 +11,7 @@
     <StackPanel Orientation="Vertical">
         <TextBlock Height="32"></TextBlock>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Foreground="White" Margin="20" Height="250" Width="280" FontSize="30" FontFamily="Yu Gothic UI" Background="Teal">
+            <Button Foreground="White" Margin="20" Height="250" Width="280" FontSize="30" FontFamily="Yu Gothic UI" Background="Teal" Click="Button_Click_1">
                 <StackPanel Orientation="Vertical">
                     <Image Source="杂货铺.png" Height="130" Width="170"></Image>
                     <TextBlock HorizontalAlignment="Center">暂存生鲜</TextBlock>

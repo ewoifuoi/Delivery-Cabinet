@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Delivery_Cabinet
 {
-    class Cabinet
+    public class Cabinet
     {
+        
+        public int id;
+        public string value = "";
+
+        public Cabinet(int id, string value)
+        {
+            this.id = id;
+            this.value = value;
+        }
+
+
     }
 }

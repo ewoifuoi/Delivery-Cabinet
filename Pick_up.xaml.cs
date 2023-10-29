@@ -97,6 +97,15 @@ namespace Delivery_Cabinet
                 error.Text = "请输入四位取货码";
                 Clear();
             }
+            else if(this.parentWindow.CheckValue(value) == false)
+            {
+                error.Text = "输入的取货码无效";
+                Clear();
+            }
+            else
+            {
+                this.parentWindow.container.Navigate(this.parentWindow.completed);
+            }
         }
 
         private void Clear()

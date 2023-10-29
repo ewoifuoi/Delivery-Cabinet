@@ -20,6 +20,19 @@ namespace Delivery_Cabinet
     /// </summary>
     public partial class Completed : Page
     {
+
+        public MainWindow parentWindow;
+        public MainWindow ParentWindow
+        {
+            get
+            {
+                return parentWindow;
+            }
+            set
+            {
+                parentWindow = value;
+            }
+        }
         public Completed()
         {
             InitializeComponent();

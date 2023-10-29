@@ -30,15 +30,14 @@ public partial class MainWindow : Window
     public Page select_cabinet;
     public Page completed;
     public Page pick_up;
+    public Page deposit;
 
-    /// <summary>
-    /// 所有取货码
-    /// </summary>
-    public List<string> valid_value;
+    public List<Cabinet> cabinets = new List<Cabinet>();
     
     public MainWindow()
     {
         InitializeComponent();
+        Init_All_Pages();
         welcome = new Welcome
         {
             ParentWindow = this
@@ -52,10 +51,7 @@ public partial class MainWindow : Window
                                  //开启定时器
         timer.Start();
 
-        valid_value = new List<string> // 取货码初始化
-        {
-            "7459"
-        };
+        cabinets.Add(new Cabinet(0, "7459"));
 
     }
 
@@ -89,8 +85,20 @@ public partial class MainWindow : Window
     /// </summary>
     public void Init_All_Pages()
     {
-        select_cabinet = new Select_Cabinet();
-        
+        pick_up = new Pick_up
+        {
+            parentWindow = this
+        };
+        select_cabinet = new Select_Cabinet
+        {
+            parentWindow = this
+        }; completed = new Completed
+        {
+            parentWindow = this
+        }; deposit = new Deposit
+        {
+            parentWindow = this
+        };
     }
 
     /// <summary>
@@ -100,9 +108,9 @@ public partial class MainWindow : Window
     /// <returns></returns>
     public bool CheckValue(string value)
     {
-        if(valid_value.Contains(value))
+        foreach (var item in cabinets)
         {
-            return true;
+            if(item.value == value) return true;
         }
         return false;
     }
