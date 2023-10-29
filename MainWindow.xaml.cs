@@ -98,10 +98,7 @@ public partial class MainWindow : Window
         {
             parentWindow = this
         };
-        completed = new Completed
-        {
-            parentWindow = this
-        }; deposit = new Deposit
+        deposit = new Deposit
         {
             parentWindow = this
         };

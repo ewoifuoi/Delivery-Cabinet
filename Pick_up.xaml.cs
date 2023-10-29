@@ -104,6 +104,10 @@ namespace Delivery_Cabinet
             }
             else
             {
+
+
+                this.parentWindow.completed = new Completed();
+                this.parentWindow.completed.parentWindow = this.parentWindow;
                 this.parentWindow.container.Navigate(this.parentWindow.completed);
             }
         }

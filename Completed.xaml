@@ -30,7 +30,14 @@
             </Style>
         </StackPanel.Resources>
         <StackPanel Orientation="Vertical" Width="361">
-            <TextBlock Height="69"/>
+            <TextBlock Height="15"/>
+            <StackPanel Orientation="Horizontal" Height="54">
+                <TextBlock Width="18"/>
+                <Button Width="53" Click="Button_Click" Height="53" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Image Source="返回.png" Height="42" Width="42"/>
+                </Button>
+            </StackPanel>
+            <TextBlock Height="7"/>
             <StackPanel Orientation="Horizontal" Width="321">
                 <TextBlock Width="9" RenderTransformOrigin="0.5,0.5">
                     <TextBlock.RenderTransform>
@@ -163,13 +170,13 @@
         <StackPanel Orientation="Vertical" Width="350" Margin="10">
             <TextBlock Height="54"/>
             <TextBlock Text="柜门已成功开启" Style="{StaticResource Text}" FontFamily="Microsoft YaHei" FontWeight="Bold"/>
-            <TextBlock Height="8"/>
+            <TextBlock Height="21"/>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="12"/>
-                <Image HorizontalAlignment="Left" Source="check.png" Height="164" Width="165"/>
+                <Image Source="check.png" Height="166" Width="167"/>
             </StackPanel>
-            <TextBlock Height="16"/>
+            <TextBlock Height="28"/>
             <TextBlock Text="请确保关闭柜门后,将退出此界面" Style="{StaticResource Text2}"></TextBlock>
         </StackPanel>
     </StackPanel>
