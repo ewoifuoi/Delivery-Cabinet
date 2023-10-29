@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,9 +25,15 @@ namespace Delivery_Cabinet;
 /// </summary>
 public partial class MainWindow : Window
 {
+    /// 所有页面
     public Page welcome;
     public Page select_cabinet;
+    public Page completed;
+    public Page pick_up;
 
+    /// <summary>
+    /// 所有取货码
+    /// </summary>
     public List<string> valid_value;
     
     public MainWindow()
@@ -52,6 +59,11 @@ public partial class MainWindow : Window
 
     }
 
+    /// <summary>
+    /// 更新右上角时间
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void timer_Tick(object? sender, EventArgs e)
     {
         time.Text = DateTime.Now.ToString("T");
@@ -62,15 +74,37 @@ public partial class MainWindow : Window
 
     }
 
+    /// <summary>
+    /// 重写拖动
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         this.DragMove();
     }
 
+    /// <summary>
+    /// 重新初始化页面
+    /// </summary>
     public void Init_All_Pages()
     {
         select_cabinet = new Select_Cabinet();
         
+    }
+
+    /// <summary>
+    /// 校验取货码
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public bool CheckValue(string value)
+    {
+        if(valid_value.Contains(value))
+        {
+            return true;
+        }
+        return false;
     }
 
 

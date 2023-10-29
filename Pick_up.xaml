@@ -38,8 +38,11 @@
             </Style>
         </StackPanel.Resources>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-            <Button Width="149" Click="Button_Click"></Button>
-            <TextBlock Height="60" Width="181"></TextBlock>
+            <TextBlock Width="29"></TextBlock>
+            <Button Width="53" Click="Button_Click" Height="53" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="返回.png" Height="42" Width="42"/>
+            </Button>
+            <TextBlock Height="60" Width="242"></TextBlock>
             <TextBlock Text="请输入取货码" FontSize="25" Height="39"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
@@ -48,14 +51,14 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Height="34"></TextBlock>
                     <StackPanel Orientation="Horizontal" Height="103" Width="321">
-                        <TextBox Style="{StaticResource TextBox}"></TextBox>
-                        <TextBox Style="{StaticResource TextBox}"></TextBox>
-                        <TextBox Style="{StaticResource TextBox}"></TextBox>
-                        <TextBox Style="{StaticResource TextBox}"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}" x:Name="value_0"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}" x:Name="value_1"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}" x:Name="value_2"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}" x:Name="value_3"></TextBox>
                     </StackPanel>
                     <!--输入-->
                     <TextBlock Height="31"></TextBlock>
-                    <Button Height="73" Width="276" Background="#FFE08F1F">
+                    <Button Height="73" Width="276" Background="#FFE08F1F" Click="Open_Cabinet">
                         <TextBlock Style="{StaticResource ButtonText}">开柜取货</TextBlock>
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -121,6 +124,7 @@
                 </Grid>
             </StackPanel>
             <!--键盘-->
+
         </StackPanel>
     </StackPanel>
 </Page>

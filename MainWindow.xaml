@@ -21,6 +21,7 @@
                 <TextBlock x:Name="time" Foreground="White" Text="15:30:15" FontSize="16" Height="26"></TextBlock>
             </StackPanel>
         </StackPanel>
+        
         <Frame x:Name="container" NavigationUIVisibility="Hidden" ></Frame>
     </StackPanel>
 </Window>
