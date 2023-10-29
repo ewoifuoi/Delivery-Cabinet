@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Delivery_Cabinet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" Background="#FFF0F0F0"
+        Title="MainWindow" Height="500" Width="800" Background="#FFDDDDDD"
         AllowsTransparency="True" WindowStyle="None">
     <StackPanel MouseLeftButtonDown="Border_MouseLeftButtonDown">
         <StackPanel Background="#FF0A0A42" Height="66">

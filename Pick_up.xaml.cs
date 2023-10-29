@@ -31,7 +31,7 @@ namespace Delivery_Cabinet
         /// <summary>
         /// 取货码光标
         /// </summary>
-        public int index = 0;
+        public int index = -1;
 
         public List<TextBox> input = new List<TextBox>();
 
@@ -64,24 +64,26 @@ namespace Delivery_Cabinet
         {
             var btn = sender as Button;
 
+            error.Text = "";
+
             if (btn.Name == "key_Clear") Clear();
             else if(btn.Name == "key_Back")
             {
-                
-                input[index].Clear();
-                if (index != 0) 
+                if (index >= 0) 
                 {
+                    input[index].Clear();
                     value = value.Substring(0, value.Length - 1);
                     index--;
                 }
             }
             else
             {
-                if(index < 4)
+                if(index < 3)
                 {
-                    input[index].Text = "1";
-                    value += input[index].Text;
                     index++;
+                    input[index].Text = btn.Name.Substring(4, 1);
+                    value += input[index].Text;
+                    
                 }
             }
 
@@ -89,14 +91,11 @@ namespace Delivery_Cabinet
 
         private void Open_Cabinet(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(value);
-            if(parentWindow.CheckValue(value))
+            
+            if(index != 3)
             {
-
-            }
-            else
-            {
-
+                error.Text = "请输入四位取货码";
+                Clear();
             }
         }
 
@@ -107,7 +106,7 @@ namespace Delivery_Cabinet
                 item.Clear();
             }
             value = "";
-            index = 0;
+            index = -1;
         }
     }
 }
