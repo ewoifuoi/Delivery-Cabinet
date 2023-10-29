@@ -26,11 +26,16 @@ namespace Delivery_Cabinet;
 public partial class MainWindow : Window
 {
     /// 所有页面
-    public Page welcome;
-    public Page select_cabinet;
-    public Page completed;
-    public Page pick_up;
-    public Page deposit;
+    public Welcome welcome;
+    
+    public Completed completed;
+    public Pick_up pick_up;
+    public Deposit deposit;
+    public Depositing depositing;
+
+
+    public int selected_id = -1;
+    
 
     public List<Cabinet> cabinets;
     
@@ -93,16 +98,14 @@ public partial class MainWindow : Window
         {
             parentWindow = this
         };
-        select_cabinet = new Select_Cabinet
-        {
-            parentWindow = this
-        }; completed = new Completed
+        completed = new Completed
         {
             parentWindow = this
         }; deposit = new Deposit
         {
             parentWindow = this
         };
+        
     }
 
     /// <summary>
@@ -119,7 +122,9 @@ public partial class MainWindow : Window
         return false;
     }
 
-
     
+
+
+
 
 }

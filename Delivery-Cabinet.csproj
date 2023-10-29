@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="check.png" />
     <None Remove="信号.png" />
     <None Remove="左箭头.png" />
     <None Remove="扫码验货.png" />
@@ -18,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="check.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="信号.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

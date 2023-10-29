@@ -8,7 +8,169 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Completed">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Horizontal" >
+        <StackPanel.Resources>
+            <Style x:Key="Box" TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Background" Value="SandyBrown"/>
+            </Style>
+            <Style x:Key="Text" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="DimGray"/>
+                <Setter Property="FontSize" Value="48"/>
+            </Style>
+            <Style x:Key="Text3" TargetType="TextBox">
+                <Setter Property="Foreground" Value="Goldenrod"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="IsHitTestVisible" Value="False"/>
+                <Setter Property="FontSize" Value="50"/>
+            </Style>
+            <Style x:Key="Text2" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+        </StackPanel.Resources>
+        <StackPanel Orientation="Vertical" Width="361">
+            <TextBlock Height="69"/>
+            <StackPanel Orientation="Horizontal" Width="321">
+                <TextBlock Width="9" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <Rectangle HorizontalAlignment="Left" Height="27" RadiusX="0" RadiusY="0" RenderTransformOrigin="0.5,0.5" Fill="LightSteelBlue"  Width="291" Stroke="Black">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-31.691"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="11.113"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <StackPanel Orientation="Horizontal" Width="333">
+
+                        <StackPanel Height="296" Background="LightSteelBlue" Orientation="Horizontal" Width="286">
+                            <StackPanel Background="Gray" Margin="5 2 2 2" Width="93" Height="284">
+                                <Grid Height="274">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Style="{StaticResource Box}" Grid.Row="0" Grid.Column="0" x:Name="c_A"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="0" Grid.Column="1" x:Name="c_B"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1" Grid.Column="0" x:Name="c_C"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1" Grid.Column="1" x:Name="c_D"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="2" Grid.Column="0" x:Name="c_E"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="2" Grid.Column="1" x:Name="c_F"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="3" Grid.Column="0" x:Name="c_G"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="3" Grid.Column="1" x:Name="c_H"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="4" Grid.ColumnSpan="2" x:Name="c_I"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="c_J"/>
+
+                                    <Button Style="{StaticResource Box}" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="c_K" Margin="2,2,2,-4"/>
+
+
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Background="Gray" Margin="2" Width="82" Height="284">
+                                <Grid Height="81">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25*"/>
+                                        <RowDefinition Height="24*"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Button Style="{StaticResource Box}" Grid.Row="0" Margin="2,2,2,2" x:Name="c_L"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1" Margin="2,2,2,2" x:Name="c_M"/>
+
+                                </Grid>
+                                <Rectangle Margin="5" Height="53" Fill="Black"></Rectangle>
+                                <Grid Height="136">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="8*"/>
+                                        <RowDefinition Height="9*"/>
+                                    </Grid.RowDefinitions>
+                                    <Button Style="{StaticResource Box}"  x:Name="c_N" Margin="2,2,2,0"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1"  x:Name="c_O" Margin="2,2,2,2" />
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Background="Gray" Margin="2" Width="93" Height="283">
+                                <Grid Height="271">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="29*"/>
+                                        <RowDefinition Height="28*"/>
+                                        <RowDefinition Height="27*"/>
+                                        <RowDefinition Height="31*"/>
+                                        <RowDefinition Height="35*"/>
+                                        <RowDefinition Height="30*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Style="{StaticResource Box}" Grid.Row="0" Grid.Column="0" Margin="2,2,2,2" x:Name="c_P"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="0" Grid.Column="1" Margin="2,2,2,2" x:Name="c_Q"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1" Grid.Column="0" Margin="2,2,2,2" x:Name="c_R"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="1" Grid.Column="1" Margin="2,2,2,2" x:Name="c_S"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="2" Grid.Column="0" Margin="2,2,2,2" x:Name="c_T"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="2" Grid.Column="1" Margin="2,2,2,2" x:Name="c_U"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="3" Grid.ColumnSpan="2" Margin="2,2,2,2" x:Name="c_V"/>
+
+                                    <Button Style="{StaticResource Box}" Grid.Row="4" Grid.ColumnSpan="2" Margin="2,2,2,2" x:Name="c_W"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="5" Grid.ColumnSpan="2" Margin="2,2,2,2" x:Name="c_X"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="6" Grid.ColumnSpan="2" Margin="2,2,2,2" x:Name="c_Y"/>
+                                    <Button Style="{StaticResource Box}" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="2,2,2,-6" x:Name="c_Z"/>
+                                </Grid>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <Rectangle Fill="LightSteelBlue" Width="24" RenderTransformOrigin="0.5,0.5" Stroke="Black" Height="292">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="-45.775"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-16.693"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Width="34"/>
+        <StackPanel Orientation="Vertical" Width="350" Margin="10">
+            <TextBlock Height="54"/>
+            <TextBlock Text="柜门已成功开启" Style="{StaticResource Text}" FontFamily="Microsoft YaHei" FontWeight="Bold"/>
+            <TextBlock Height="8"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="12"/>
+                <Image HorizontalAlignment="Left" Source="check.png" Height="164" Width="165"/>
+            </StackPanel>
+            <TextBlock Height="16"/>
+            <TextBlock Text="请确保关闭柜门后,将退出此界面" Style="{StaticResource Text2}"></TextBlock>
+        </StackPanel>
+    </StackPanel>
 </Page>

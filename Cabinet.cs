@@ -13,6 +13,7 @@ namespace Delivery_Cabinet
         public int id;
         public string value = "";
         public bool isAvaliable = true;
+        public int state; // 制冷状态
         
 
         public Cabinet(int id, string value)
@@ -25,6 +26,11 @@ namespace Delivery_Cabinet
         {
             this.id = id;
             
+        }
+
+        public void Deposit()
+        {
+            while(true) { }
         }
 
 

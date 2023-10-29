@@ -17,7 +17,6 @@
             <Style x:Key="Text" TargetType="TextBlock">
                 <Setter Property="Foreground" Value="DimGray"/>
                 <Setter Property="FontSize" Value="18"/>
-
             </Style>
             <Style x:Key="Text2" TargetType="TextBlock">
                 <Setter Property="Foreground" Value="DimGray"/>
@@ -240,7 +239,7 @@
                 </StackPanel>
                 <TextBlock Height="20"/>
                 <StackPanel Orientation="Horizontal" Height="104" >
-                    <Button Content="开柜存货" FontSize="28" Style="{StaticResource btn}" Width="320" x:Name="enter">
+                    <Button Content="开柜存货" FontSize="28" Style="{StaticResource btn}" Width="320" x:Name="enter" Click="deposit_cabinet">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>

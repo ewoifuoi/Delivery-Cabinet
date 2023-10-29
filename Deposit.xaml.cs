@@ -22,6 +22,7 @@ namespace Delivery_Cabinet
     {
 
         List<Button> c_btns;
+        Cabinet cabinet;
 
         public MainWindow parentWindow;
         public MainWindow ParentWindow
@@ -40,8 +41,6 @@ namespace Delivery_Cabinet
             InitializeComponent();
             c_btns = new List<Button>();
             get_All_cabinet_buttons(this);
-            
-            
             
         }
 
@@ -72,7 +71,10 @@ namespace Delivery_Cabinet
             btn.BorderThickness = new Thickness(5);
             btn.BorderBrush = new SolidColorBrush(Colors.DarkRed);
 
-            id.Text = (btn.Name.Substring(2, 1).ToCharArray()[0] - 'A').ToString();
+            int uid = btn.Name.Substring(2, 1).ToCharArray()[0] - 'A';
+            id.Text = uid.ToString();
+
+            this.parentWindow.selected_id = uid;
         }
 
         /// <summary>
@@ -113,6 +115,13 @@ namespace Delivery_Cabinet
             for(int i = 0; i < 26; i++)
             {
                 c_btns[i].Click += Cabinet_Selected;
+
+                int id = c_btns[i].Name.Substring(2, 1).ToCharArray()[0] - 'A';
+                if (this.parentWindow.cabinets[id].isAvaliable == false)
+                {
+                    c_btns[i].IsHitTestVisible = false;
+                    c_btns[i].Background = new SolidColorBrush(Colors.Silver);
+                }
             }
             
         }
@@ -123,6 +132,16 @@ namespace Delivery_Cabinet
             v_0.IsEnabled = true; v_1.IsEnabled = true; v_2.IsEnabled = true;
             v_0.Background = enter.Background; v_1.Background = enter.Background;v_2.Background = enter.Background;
             btn.Background = new SolidColorBrush(Colors.LightGreen);
+        }
+
+        private void deposit_cabinet(object sender, RoutedEventArgs e)
+        {
+            
+            this.parentWindow.depositing  = new Depositing();
+            this.parentWindow.depositing.parentWindow = this.parentWindow;
+
+            this.parentWindow.container.Navigate(this.parentWindow.depositing);
+            
         }
     }
 }
