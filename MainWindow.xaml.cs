@@ -32,12 +32,14 @@ public partial class MainWindow : Window
     public Page pick_up;
     public Page deposit;
 
-    public List<Cabinet> cabinets = new List<Cabinet>();
+    public List<Cabinet> cabinets;
     
     public MainWindow()
     {
         InitializeComponent();
-        
+        cabinets = new List<Cabinet>();
+        for (int i = 0; i < 26; i++) cabinets.Add(new Cabinet(i));
+
         welcome = new Welcome
         {
             ParentWindow = this
@@ -51,7 +53,7 @@ public partial class MainWindow : Window
                                  //开启定时器
         timer.Start();
 
-        for (int i = 0; i < 26; i++) cabinets.Add(new Cabinet(i));
+        
 
         Init_All_Pages();
 

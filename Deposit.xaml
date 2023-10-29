@@ -14,6 +14,22 @@
                 <Setter Property="Margin" Value="2"/>
                 <Setter Property="Background" Value="SandyBrown"/>
             </Style>
+            <Style x:Key="Text" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="DimGray"/>
+                <Setter Property="FontSize" Value="18"/>
+
+            </Style>
+            <Style x:Key="Text2" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="DimGray"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontFamily" Value="Yu Gothic UI"/>
+            </Style>
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Width" Value="100"/>
+
+            </Style>
         </StackPanel.Resources>
         <StackPanel Orientation="Vertical" Width="371" Height="431">
             <TextBlock/>
@@ -156,12 +172,83 @@
             </StackPanel>
 
 
+        </StackPanel>
 
-
-
-
-
-
+        <StackPanel Orientation="Vertical" Width="350" Margin="10">
+            <TextBlock/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock/>
+                <TextBlock FontSize="18" Foreground="DimGray" Text="当前可用柜子数 : "></TextBlock>
+                <TextBlock/>
+                <TextBlock FontSize="18" x:Name="cabinets_num"></TextBlock>
+            </StackPanel>
+            <TextBlock Height="31"/>
+            <StackPanel x:Name="cabinet_prompt" Orientation="Vertical" Height="299">
+                <TextBlock/>
+                <TextBlock Text="请在左侧选择存放货物的柜子" FontSize="25" Foreground="Black" TextAlignment="Center" Style="{StaticResource Text}"/>
+                <TextBlock/>
+                <Image Source="左箭头.png" Height="118" RenderTransformOrigin="0.5,0.5" Width="118" HorizontalAlignment="Left">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </StackPanel>
+            <StackPanel x:Name="cabinet_data" Orientation="Vertical" Height="322" Margin="10" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="当前所选中的柜体编号为 : " Style="{StaticResource Text}"/>
+                    <TextBlock x:Name="id" Foreground="DarkRed" Style="{StaticResource Text}"/>
+                </StackPanel>
+                <TextBlock/>
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Height="10" Width="10" Fill="DarkBlue"></Ellipse>
+                    <TextBlock Width="11"/>
+                    <TextBlock Text="制冷中" Style="{StaticResource Text}"/>
+                    <TextBlock Width="18"/>
+                    <TextBlock Text="当前温度 : " Style="{StaticResource Text}"/>
+                    <TextBlock x:Name="tem" Style="{StaticResource Text}" Width="49"/>
+                </StackPanel>
+                <TextBlock Height="20"/>
+                <TextBlock Text="请选择需要的柜体温度: " Style="{StaticResource Text2}"/>
+                <TextBlock Height="5"/>
+                <StackPanel Orientation="Horizontal" Height="61">
+                    <Button x:Name="v_0" Content="冷冻" Style="{StaticResource btn}" Click="ChooseCondition">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="v_1" Content="保鲜" Style="{StaticResource btn}" Click="ChooseCondition">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="v_2" Content="常温" Style="{StaticResource btn}" Click="ChooseCondition">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <TextBlock Height="20"/>
+                <StackPanel Orientation="Horizontal" Height="104" >
+                    <Button Content="开柜存货" FontSize="28" Style="{StaticResource btn}" Width="320" x:Name="enter">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
 
     </StackPanel>

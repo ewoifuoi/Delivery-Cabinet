@@ -12,7 +12,8 @@ namespace Delivery_Cabinet
         
         public int id;
         public string value = "";
-        public Button c_btn = null;
+        public bool isAvaliable = true;
+        
 
         public Cabinet(int id, string value)
         {

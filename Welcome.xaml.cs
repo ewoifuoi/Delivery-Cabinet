@@ -49,6 +49,9 @@ namespace Delivery_Cabinet
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.parentWindow.container.Navigate(this.parentWindow.deposit);
+            Deposit d = this.parentWindow.deposit as Deposit;
+            d.parentWindow = this.parentWindow;
+            d.getCabinetsState();
         }
     }
 }

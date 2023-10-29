@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="信号.png" />
+    <None Remove="左箭头.png" />
     <None Remove="扫码验货.png" />
     <None Remove="杂货铺.png" />
     <None Remove="返回.png" />
@@ -18,6 +19,9 @@
 
   <ItemGroup>
     <Resource Include="信号.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="左箭头.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="扫码验货.png">
