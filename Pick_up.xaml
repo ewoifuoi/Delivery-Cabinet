@@ -1,0 +1,126 @@
+﻿<Page x:Class="Delivery_Cabinet.Pick_up"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Delivery_Cabinet"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Pick_up">
+
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style x:Key="RoundButton" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10"  BorderBrush="#FF8A854D" BorderThickness="2,2,2,2" Background="#FFBE8D43">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ButtonText" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+            <Style x:Key="TextBox" TargetType="TextBox">
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Width" Value="60"/>
+                <Setter Property="Height" Value="60"/>
+            </Style>
+        </StackPanel.Resources>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Width="149" Click="Button_Click"></Button>
+            <TextBlock Height="60" Width="181"></TextBlock>
+            <TextBlock Text="请输入取货码" FontSize="25" Height="39"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Width="17"/>
+            <StackPanel  Width="385" Height="451">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Height="34"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Height="103" Width="321">
+                        <TextBox Style="{StaticResource TextBox}"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}"></TextBox>
+                        <TextBox Style="{StaticResource TextBox}"></TextBox>
+                    </StackPanel>
+                    <!--输入-->
+                    <TextBlock Height="31"></TextBlock>
+                    <Button Height="73" Width="276" Background="#FFE08F1F">
+                        <TextBlock Style="{StaticResource ButtonText}">开柜取货</TextBlock>
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="367">
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="0" Grid.Column="0" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_1">
+                        <TextBlock Style="{StaticResource ButtonText}">1</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="0" Grid.Column="1" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_2">
+                        <TextBlock Style="{StaticResource ButtonText}">2</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="0" Grid.Column="2" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_3">
+                        <TextBlock Style="{StaticResource ButtonText}">3</TextBlock>
+                    </Button>
+
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="1" Grid.Column="0" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_4">
+                        <TextBlock Style="{StaticResource ButtonText}">4</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="1" Grid.Column="1" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_5">
+                        <TextBlock Style="{StaticResource ButtonText}">5</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="1" Grid.Column="2" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_6">
+                        <TextBlock Style="{StaticResource ButtonText}">6</TextBlock>
+                    </Button>
+
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="2" Grid.Column="0" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_7">
+                        <TextBlock Style="{StaticResource ButtonText}">7</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="2" Grid.Column="1" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_8">
+                        <TextBlock Style="{StaticResource ButtonText}">8</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="2" Grid.Column="2" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_9">
+                        <TextBlock Style="{StaticResource ButtonText}">9</TextBlock>
+                    </Button>
+
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="3" Grid.Column="0" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_Clear">
+                        <TextBlock Style="{StaticResource ButtonText}">清除</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="3" Grid.Column="1" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_0">
+                        <TextBlock Style="{StaticResource ButtonText}">0</TextBlock>
+                    </Button>
+                    <Button Margin="10" Width="100" Height="60" Grid.Row="3" Grid.Column="2" Style="{StaticResource RoundButton}" Click="Keyboard_Event" x:Name="key_Back">
+                        <Image Source="退格.png" Margin="32,10,28,10"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <!--键盘-->
+        </StackPanel>
+    </StackPanel>
+</Page>

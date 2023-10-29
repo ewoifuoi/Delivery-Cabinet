@@ -1,0 +1,26 @@
+﻿<Window x:Class="Delivery_Cabinet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Delivery_Cabinet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" Background="#FFF0F0F0"
+        AllowsTransparency="True" WindowStyle="None">
+    <StackPanel MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <StackPanel Background="#FF0A0A42" Height="66">
+            <TextBlock></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="312"></TextBlock>
+                <TextBlock Foreground="White" FontSize="24" Height="37">智能生鲜冷藏柜</TextBlock>
+                <TextBlock Width="176"></TextBlock>
+                <Image VerticalAlignment="Top" Source="信号.png" Height="36" Width="27"></Image>
+                <TextBlock Width="8"></TextBlock>
+                <TextBlock Foreground="White" Text="5G" FontSize="16" Height="25"></TextBlock>
+                <TextBlock Width="10"></TextBlock>
+                <TextBlock x:Name="time" Foreground="White" Text="15:30:15" FontSize="16" Height="26"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <Frame x:Name="container" NavigationUIVisibility="Hidden" ></Frame>
+    </StackPanel>
+</Window>

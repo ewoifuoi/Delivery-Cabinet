@@ -1,0 +1,40 @@
+﻿<Page x:Class="Delivery_Cabinet.Welcome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Delivery_Cabinet"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      >
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Height="32"></TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Foreground="White" Margin="20" Height="250" Width="280" FontSize="30" FontFamily="Yu Gothic UI" Background="Teal">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="杂货铺.png" Height="130" Width="170"></Image>
+                    <TextBlock HorizontalAlignment="Center">暂存生鲜</TextBlock>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+            <Button Foreground="White" Margin="20" Height="250" Width="280" FontSize="30" FontFamily="Yu Gothic UI" Background="Goldenrod" Click="Button_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="扫码验货.png" Height="130" Width="170"></Image>
+                    <TextBlock HorizontalAlignment="Center">我要取货</TextBlock>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+
+</Page>
