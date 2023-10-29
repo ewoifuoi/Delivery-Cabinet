@@ -37,7 +37,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        Init_All_Pages();
+        
         welcome = new Welcome
         {
             ParentWindow = this
@@ -51,7 +51,9 @@ public partial class MainWindow : Window
                                  //开启定时器
         timer.Start();
 
-        cabinets.Add(new Cabinet(0, "7459"));
+        for (int i = 0; i < 26; i++) cabinets.Add(new Cabinet(i));
+
+        Init_All_Pages();
 
     }
 
