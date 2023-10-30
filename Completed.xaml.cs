@@ -10,9 +10,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Delivery_Cabinet
 {
@@ -23,6 +25,8 @@ namespace Delivery_Cabinet
     {
         public int selected_id = -1;
         List<Button> c_btns = new List<Button>();
+
+        public LinearGradientBrush lb;
 
         public MainWindow parentWindow;
         public MainWindow ParentWindow
@@ -43,14 +47,30 @@ namespace Delivery_Cabinet
 
             get_All_cabinet_buttons(this);
 
+            
             pick_up(value);
+
+            SolidColorBrush ys = new SolidColorBrush();//颜色绘制
+
+            ColorAnimation ks = new ColorAnimation();//颜色动画处理
+            ks.From = Colors.DarkGray;//初始颜色
+            ks.To = Colors.IndianRed;//结束颜色
+            ks.AutoReverse = true;//反向播放动画
+            ks.RepeatBehavior = RepeatBehavior.Forever;//无限循环播放
+            ks.Duration = new Duration(TimeSpan.FromMilliseconds(500));//动画一次所用时间
+            ys.BeginAnimation(SolidColorBrush.ColorProperty, ks);//颜色绘制使用动画绘制
+            c_btns[selected_id].Background = ys;//窗体背景颜色为绘制颜色
+
+
+
         }
+
 
 
         public void pick_up(string value)
         {
             
-            foreach(var item in this.parentWindow.cabinets)
+            foreach(var item in MainWindow.cabinets)
             {
                 if(item.value == value)
                 {
@@ -59,10 +79,10 @@ namespace Delivery_Cabinet
             }
 
 
-            this.parentWindow.cabinets[selected_id].value = "";
-            this.parentWindow.cabinets[selected_id].isAvaliable = true;
+            MainWindow.cabinets[selected_id].value = "";
+            MainWindow.cabinets[selected_id].isAvaliable = true;
 
-            this.parentWindow.cabinets[selected_id].Withdraw();
+            MainWindow.cabinets[selected_id].Withdraw();
             
         }
 

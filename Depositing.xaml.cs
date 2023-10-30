@@ -54,12 +54,12 @@ public partial class Depositing : Page
         int uid = parentWindow.selected_id;
         value.Text = generated_value;
 
-        Cabinet temp = this.parentWindow.cabinets[uid];
+        Cabinet temp = MainWindow.cabinets[uid];
         temp.value = generated_value;
         temp.isAvaliable = false;
 
 
-        this.parentWindow.cabinets[uid].Deposit();
+        MainWindow.cabinets[uid].Deposit();
         
     }
 

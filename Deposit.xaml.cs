@@ -23,6 +23,7 @@ namespace Delivery_Cabinet
 
         List<Button> c_btns;
         Cabinet cabinet;
+        private int state = 0;
 
         public MainWindow parentWindow;
         public MainWindow ParentWindow
@@ -41,6 +42,7 @@ namespace Delivery_Cabinet
             InitializeComponent();
             c_btns = new List<Button>();
             get_All_cabinet_buttons(this);
+            
             
         }
 
@@ -75,6 +77,8 @@ namespace Delivery_Cabinet
             id.Text = uid.ToString();
 
             this.parentWindow.selected_id = uid;
+
+            tem.Text = MainWindow.cabinets[uid].temperature.ToString();
         }
 
         /// <summary>
@@ -103,7 +107,7 @@ namespace Delivery_Cabinet
         public void getCabinetsState()
         {
             int sum = 0;
-            foreach(var item in this.parentWindow.cabinets)
+            foreach(var item in MainWindow.cabinets)
             {
                 if(item.isAvaliable == true)
                 {
@@ -117,7 +121,7 @@ namespace Delivery_Cabinet
                 c_btns[i].Click += Cabinet_Selected;
 
                 int id = c_btns[i].Name.Substring(2, 1).ToCharArray()[0] - 'A';
-                if (this.parentWindow.cabinets[id].isAvaliable == false)
+                if (MainWindow.cabinets[id].isAvaliable == false)
                 {
                     c_btns[i].IsHitTestVisible = false;
                     c_btns[i].Background = new SolidColorBrush(Colors.Silver);
@@ -131,6 +135,9 @@ namespace Delivery_Cabinet
             Button btn = sender as Button;
             v_0.IsEnabled = true; v_1.IsEnabled = true; v_2.IsEnabled = true;
             v_0.Background = enter.Background; v_1.Background = enter.Background;v_2.Background = enter.Background;
+
+            if (btn.Name == "v_0") state = 0; if (btn.Name == "v_1") state = 1; if (btn.Name == "v_2") state = 2;
+            MainWindow.cabinets[parentWindow.selected_id].state = state;
             btn.Background = new SolidColorBrush(Colors.LightGreen);
         }
 
@@ -139,7 +146,7 @@ namespace Delivery_Cabinet
             
             this.parentWindow.depositing  = new Depositing(this.parentWindow);
             
-
+            
             this.parentWindow.container.Navigate(this.parentWindow.depositing);
             
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Delivery_Cabinet
         public string value = "";
         public bool isAvaliable = true;
         public int state; // 制冷状态
-        public double temperature;
+        public double temperature = 23.5;
         
 
         public Cabinet(int id, string value)
@@ -76,6 +77,8 @@ namespace Delivery_Cabinet
             
 
         }
+
+        
 
 
     }

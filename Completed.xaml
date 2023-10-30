@@ -8,11 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Completed">
 
-    <StackPanel Orientation="Horizontal" >
+
+    <StackPanel Orientation="Horizontal">
         <StackPanel.Resources>
             <Style x:Key="Box" TargetType="Button">
                 <Setter Property="Margin" Value="2"/>
-                <Setter Property="Background" Value="SandyBrown"/>
+                <Setter Property="Background" Value="#FF829698"/>
             </Style>
             <Style x:Key="Text" TargetType="TextBlock">
                 <Setter Property="Foreground" Value="DimGray"/>
@@ -29,7 +30,7 @@
                 <Setter Property="FontSize" Value="24"/>
             </Style>
         </StackPanel.Resources>
-        <StackPanel Orientation="Vertical" Width="361">
+        <StackPanel Orientation="Vertical" Width="371">
             <TextBlock Height="15"/>
             <StackPanel Orientation="Horizontal" Height="54">
                 <TextBlock Width="18"/>
@@ -38,7 +39,9 @@
                 </Button>
             </StackPanel>
             <TextBlock Height="7"/>
-            <StackPanel Orientation="Horizontal" Width="321">
+
+
+            <StackPanel Orientation="Horizontal" Width="277">
                 <TextBlock Width="9" RenderTransformOrigin="0.5,0.5">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
@@ -49,22 +52,22 @@
                         </TransformGroup>
                     </TextBlock.RenderTransform>
                 </TextBlock>
-                <StackPanel Orientation="Vertical">
-                    <Rectangle HorizontalAlignment="Left" Height="27" RadiusX="0" RadiusY="0" RenderTransformOrigin="0.5,0.5" Fill="LightSteelBlue"  Width="291" Stroke="Black">
+                <StackPanel Orientation="Vertical" Width="270">
+                    <Rectangle HorizontalAlignment="Left" Height="23" RadiusX="0" RadiusY="0" RenderTransformOrigin="0.5,0.5" Fill="LightSteelBlue"  Width="236" Stroke="Black">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
-                                <SkewTransform AngleX="-31.691"/>
+                                <SkewTransform AngleX="-49.009"/>
                                 <RotateTransform/>
-                                <TranslateTransform X="11.113"/>
+                                <TranslateTransform X="16.179"/>
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                     </Rectangle>
-                    <StackPanel Orientation="Horizontal" Width="333">
+                    <StackPanel Orientation="Horizontal" Width="260">
 
-                        <StackPanel Height="296" Background="LightSteelBlue" Orientation="Horizontal" Width="286">
-                            <StackPanel Background="Gray" Margin="5 2 2 2" Width="93" Height="284">
-                                <Grid Height="274">
+                        <StackPanel Height="244" Background="LightSteelBlue" Orientation="Horizontal" Width="237">
+                            <StackPanel Background="Gray" Margin="5 2 2 2" Width="78" Height="238">
+                                <Grid Height="228" Width="77">
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
                                         <RowDefinition/>
@@ -96,8 +99,8 @@
 
                                 </Grid>
                             </StackPanel>
-                            <StackPanel Background="Gray" Margin="2" Width="82" Height="284">
-                                <Grid Height="81">
+                            <StackPanel Background="Gray" Margin="2" Width="68" Height="236">
+                                <Grid Height="70" Width="59">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="25*"/>
                                         <RowDefinition Height="24*"/>
@@ -108,7 +111,7 @@
 
                                 </Grid>
                                 <Rectangle Margin="5" Height="53" Fill="Black"></Rectangle>
-                                <Grid Height="136">
+                                <Grid Height="100" Width="61">
 
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="8*"/>
@@ -118,8 +121,8 @@
                                     <Button Style="{StaticResource Box}" Grid.Row="1"  x:Name="c_O" Margin="2,2,2,2" />
                                 </Grid>
                             </StackPanel>
-                            <StackPanel Background="Gray" Margin="2" Width="93" Height="283">
-                                <Grid Height="271">
+                            <StackPanel Background="Gray" Margin="2" Width="70" Height="236">
+                                <Grid Height="227" Width="65">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30*"/>
                                         <RowDefinition Height="30*"/>
@@ -151,13 +154,13 @@
                             </StackPanel>
 
                         </StackPanel>
-                        <Rectangle Fill="LightSteelBlue" Width="24" RenderTransformOrigin="0.5,0.5" Stroke="Black" Height="292">
+                        <Rectangle Fill="LightSteelBlue" Width="22" RenderTransformOrigin="0.5,0.5" Stroke="Black" Height="240">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
-                                    <SkewTransform AngleY="-45.775"/>
+                                    <SkewTransform AngleY="-40.721"/>
                                     <RotateTransform/>
-                                    <TranslateTransform Y="-16.693"/>
+                                    <TranslateTransform Y="-14.86"/>
                                 </TransformGroup>
                             </Rectangle.RenderTransform>
                         </Rectangle>
@@ -166,17 +169,17 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <TextBlock Width="34"/>
-        <StackPanel Orientation="Vertical" Width="350" Margin="10">
-            <TextBlock Height="54"/>
+        <TextBlock Width="1"/>
+        <StackPanel Orientation="Vertical" Width="350" Margin="10" Height="400">
+            <TextBlock Height="11"/>
             <TextBlock Text="柜门已成功开启" Style="{StaticResource Text}" FontFamily="Microsoft YaHei" FontWeight="Bold"/>
-            <TextBlock Height="21"/>
+            <TextBlock Height="27"/>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="12"/>
                 <Image Source="check.png" Height="166" Width="167"/>
             </StackPanel>
-            <TextBlock Height="28"/>
+            <TextBlock Height="36"/>
             <TextBlock Text="请确保关闭柜门后,将退出此界面" Style="{StaticResource Text2}"></TextBlock>
         </StackPanel>
     </StackPanel>

@@ -38,7 +38,7 @@ public partial class MainWindow : Window
     public int selected_id = -1;
     
 
-    public List<Cabinet> cabinets;
+    public static List<Cabinet> cabinets;
     
     public MainWindow()
     {
