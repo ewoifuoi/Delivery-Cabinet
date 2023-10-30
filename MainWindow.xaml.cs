@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
 using System.Security.RightsManagement;
@@ -62,6 +63,17 @@ public partial class MainWindow : Window
 
         Init_All_Pages();
 
+
+        BackgroundWorker worker = new BackgroundWorker();
+        worker.DoWork += (s, e) => {
+            SerialHelper.Init();
+        };
+        worker.RunWorkerCompleted += (s, e) => {
+            //MessageBox.Show("创建串口成功 ！");
+        };
+        worker.RunWorkerAsync();
+        
+
     }
 
     /// <summary>
@@ -118,6 +130,7 @@ public partial class MainWindow : Window
         }
         return false;
     }
+
 
     
 

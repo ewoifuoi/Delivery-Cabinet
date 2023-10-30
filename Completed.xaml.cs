@@ -36,13 +36,14 @@ namespace Delivery_Cabinet
                 parentWindow = value;
             }
         }
-        public Completed()
+        public Completed(string value, MainWindow parentWindow)
         {
             InitializeComponent();
+            this.parentWindow = parentWindow;
 
             get_All_cabinet_buttons(this);
 
-            
+            pick_up(value);
         }
 
 
@@ -56,7 +57,12 @@ namespace Delivery_Cabinet
                     selected_id = item.id;
                 }
             }
-            MessageBox.Show(selected_id.ToString());
+
+
+            this.parentWindow.cabinets[selected_id].value = "";
+            this.parentWindow.cabinets[selected_id].isAvaliable = true;
+
+            this.parentWindow.cabinets[selected_id].Withdraw();
             
         }
 

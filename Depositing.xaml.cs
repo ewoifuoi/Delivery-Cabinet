@@ -35,19 +35,18 @@ public partial class Depositing : Page
             parentWindow = value;
         }
     }
-    public Depositing()
+    public Depositing(MainWindow parentWindow)
     {
         InitializeComponent();
+        this.parentWindow = parentWindow;
 
-
-        BackgroundWorker worker = new BackgroundWorker();
-        worker.DoWork += (s, e) => {
-            generate_Value();
-        };
-        worker.RunWorkerCompleted += (s, e) => {
-            Get_into_Depositing();
-        };
-        worker.RunWorkerAsync();
+        
+        generate_Value();
+        
+        
+        Get_into_Depositing();
+        
+        
     }
 
     public void Get_into_Depositing()
@@ -60,7 +59,8 @@ public partial class Depositing : Page
         temp.isAvaliable = false;
 
 
-        //this.parentWindow.cabinets[parentWindow.selected_id].Deposit();
+        this.parentWindow.cabinets[uid].Deposit();
+        
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)

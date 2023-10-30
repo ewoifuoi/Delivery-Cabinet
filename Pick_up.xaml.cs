@@ -106,8 +106,8 @@ namespace Delivery_Cabinet
             {
 
 
-                this.parentWindow.completed = new Completed();
-                this.parentWindow.completed.parentWindow = this.parentWindow;
+                this.parentWindow.completed = new Completed(value, this.parentWindow);
+                
                 this.parentWindow.container.Navigate(this.parentWindow.completed);
             }
         }

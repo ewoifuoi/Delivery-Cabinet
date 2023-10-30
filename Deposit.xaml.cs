@@ -137,8 +137,8 @@ namespace Delivery_Cabinet
         private void deposit_cabinet(object sender, RoutedEventArgs e)
         {
             
-            this.parentWindow.depositing  = new Depositing();
-            this.parentWindow.depositing.parentWindow = this.parentWindow;
+            this.parentWindow.depositing  = new Depositing(this.parentWindow);
+            
 
             this.parentWindow.container.Navigate(this.parentWindow.depositing);
             
