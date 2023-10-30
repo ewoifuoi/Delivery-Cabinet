@@ -69,20 +69,15 @@ public partial class Depositing : Page
         this.ParentWindow.Init_All_Pages();
     }
 
-    public void generate_Value()
-    {
-        Random random = new Random();
-
-        while (true)
-        {
+    public void generate_Value() {
+        Random random = new Random(); // 初始化随机数
+        while (true) { // 如果与已存在的取货码重复则重新生成
             string temp = "";
-            for (int i = 0; i < 4; i++)
-            {
+            for (int i = 0; i < 4; i++) {
                 int a = random.Next(0, 9);
                 temp += a.ToString();
             }
-            if (!this.parentWindow.CheckValue(temp))
-            {
+            if (!this.parentWindow.CheckValue(temp)) { // 检验新生成的取货码是否与原有取货码重复
                 generated_value = temp;
                 break;
             }

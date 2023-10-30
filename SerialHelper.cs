@@ -32,9 +32,13 @@ public static class SerialHelper
        
     }
 
-    public static void SendString(string ss)
-    {
+    /// <summary>
+    /// 串口发送数据
+    /// </summary>
+    /// <param name="ss"></param>
+    public static void SendString(string ss) {
         
+        // 新建子线程异步发送串口数据
         BackgroundWorker worker = new BackgroundWorker();
         worker.DoWork += (s, e) => {
             serialPort.Write(ss);
@@ -42,30 +46,28 @@ public static class SerialHelper
         worker.RunWorkerCompleted += (s, e) => {
             //MessageBox.Show("向串口发送数据: " + s);
         };
-        worker.RunWorkerAsync();
-            
-        
+        worker.RunWorkerAsync(); 
     }
 
-    public static void ListenData()
-    {
+    /// <summary>
+    /// 监听串口接收数据
+    /// </summary>
+    public static void ListenData() {
+
+        // 新建子线程异步监听串口数据
         BackgroundWorker worker = new BackgroundWorker();
         worker.DoWork += (s, e) => {
-
-            
-            while(true)
-            {
+            while(true) {
             /// 串口数据接收响应逻辑
 
                 string data = serialPort.ReadLine();
-                switch(data.Substring(0,1))
-                {
+                switch(data.Substring(0,1)) {
                     case "T": // 温度数据
 
                         string temperature = data.Substring(1,data.Length-1);
-                        //MessageBox.Show(temperature);
-                        foreach(var item in MainWindow.cabinets)
-                        {
+                        
+                        // 遍历箱体类列表, 更新每个箱体温度
+                        foreach(var item in MainWindow.cabinets) {
                             item.temperature = Convert.ToDouble(temperature);
                         }
                         break;
@@ -73,7 +75,6 @@ public static class SerialHelper
                         break;
                     default: 
                         break;
-
                 }
             }
         };

@@ -28,17 +28,15 @@ public partial class MainWindow : Window
 {
     /// 所有页面
     public Welcome welcome;
-    
     public Completed completed;
     public Pick_up pick_up;
     public Deposit deposit;
     public Depositing depositing;
 
 
-    public int selected_id = -1;
-    
+    public int selected_id = -1; // 目标箱体编号
 
-    public static List<Cabinet> cabinets;
+    public static List<Cabinet> cabinets; // 箱体列表
     
     public MainWindow()
     {

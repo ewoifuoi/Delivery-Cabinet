@@ -62,7 +62,6 @@ namespace Delivery_Cabinet
             Button btn = sender as Button;
             cabinet_data.Visibility = Visibility.Visible;
             cabinet_prompt.Visibility = Visibility.Collapsed;
-            
 
             for(int i = 0; i < 26; i++)
             {

@@ -36,7 +36,6 @@ namespace Delivery_Cabinet
         public void Deposit()
         {
             SerialHelper.SendString("1"); // 通知存入
-
             switch (state) {
                 case 0: { // 当前需要制冷 (冷冻)
                     SerialHelper.SendString("2"); // 打开制冷
@@ -63,10 +62,7 @@ namespace Delivery_Cabinet
         {
             SerialHelper.SendString("0"); // 通知取出
             SerialHelper.SendString("3"); // 关闭制冷
-
             OpenCabinet(); // 开柜门
-
-
         }
        
         /// <summary>
