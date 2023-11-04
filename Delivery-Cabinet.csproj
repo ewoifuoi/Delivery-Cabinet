@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
     <RootNamespace>Delivery_Cabinet</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>编用分析一体 (1).ico</ApplicationIcon>
+    <UseWindowsForms>False</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +18,10 @@
     <None Remove="杂货铺.png" />
     <None Remove="返回.png" />
     <None Remove="退格.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="编用分析一体 (1).ico" />
   </ItemGroup>
 
   <ItemGroup>
